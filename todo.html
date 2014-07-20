@@ -1,0 +1,27 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>TODO</title>
+
+	<link rel="stylesheet" href="css/style.css">
+</head>
+<body id="todoApp">
+
+	<h1>Todo</h1>
+    <p>What's need to be done today?</p>
+    <input id="todo-new" type="text">
+
+    <ul id="todo-list">
+        <script id="todo-tpl" type="text/template">
+            {@each todos as todo}
+                <input type="checkbox" checked="${todo.completed}">
+                <span>${todo.title}</span>
+            {@/each}
+        </script>
+    </ul>
+
+	<script src="http://cdn.staticfile.org/require.js/2.1.14/require.min.js" data-main="app"></script>
+	<script src="js/libs/config.js"></script>
+</body>
+</html>
