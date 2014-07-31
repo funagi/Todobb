@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title><%= title %></title>
+<link rel="stylesheet" href="http://cdn.staticfile.org/normalize/3.0.1/normalize.min.css">
+<link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+	<body id="todo-app">
+		<div class="logo">
+			<h1>todos</h1>
+		</div>
+		<div class="content">
+			<input id="todo-addnew" type="text" placeholder="输入新的事件，按回车键创建">
+
+			<ul id="todo-list"></ul>
+			<script id="todo-tpl" type="text/template">
+				<input class="todo-status" type="checkbox" ${completed|todoStatus}><span class="todo-title">${title}</span>
+			</script>
+			<div class="controller">
+				<button id="todo-clear">clear</button>
+			</div>
+		</div>
+
+		<script src="http://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+		<script src="/js/juicer.js"></script>
+		<script src="http://cdn.staticfile.org/underscore.js/1.6.0/underscore-min.js"></script>
+		<script src="http://cdn.staticfile.org/backbone.js/1.1.2/backbone-min.js"></script>
+		<script src="http://cdn.staticfile.org/backbone-localstorage.js/1.1.7/backbone.localStorage-min.js"></script>
+		<script src="/js/app.js"></script>
+	</body>
+</html>

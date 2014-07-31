@@ -1,0 +1,93 @@
+h1 {
+	margin: 0;
+	padding: 0;
+}
+
+ul {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+#todo-addnew {
+	height: 40px;
+	font-size: 18px;
+	line-height: 18px;
+	padding-left: 5px;
+	width: 300px;
+	border: none;
+	border-bottom: 1px dotted #d4d4d4;
+}
+
+input:focus {
+	outline: none;
+}
+
+input:checked + span {
+	text-decoration: line-through;
+	color: #d4d4d4;
+}
+
+.todo-title {
+	vertical-align: middle;
+	margin-left: 5px;
+}
+
+.todo-item {
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+.logo {
+	margin-top: 70px;
+	font-size: 2em;
+	width: 30%;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+}
+
+.content {
+	text-align: center;
+	padding-top: 50px;
+}
+
+#todo-list {
+	text-align: left;
+	width: 300px;
+	margin-left: auto;
+	margin-right: auto;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+.controller {
+	padding-top: 15px;
+	padding-bottom: 15px;
+	margin-left: auto;
+	margin-right: auto;
+	width: 300px;
+	border-top: 1px dotted #d4d4d4;
+}
+
+#todo-clear {
+	border: none;
+	padding: 7px 10px;
+	background-color: #e65e42;
+	color: #fff;
+	text-decoration: none;
+}
+
+#todo-clear:hover {
+	background-color: #ff734a;
+}
+
+#todo-clear:focus {
+	outline: none;
+}
+
+
+
+
+
+
