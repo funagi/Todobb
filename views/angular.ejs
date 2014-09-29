@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title><%= title %></title>
+<link rel="stylesheet" href="http://cdn.staticfile.org/normalize/3.0.1/normalize.min.css">
+<link rel='stylesheet' href='/stylesheets/angular.css' />
+<script src="http://cdn.staticfile.org/angular.js/1.2.20/angular.min.js"></script>
+</head>
+	<body ng-app>
+		<h1 class="header">todos</h1>
+		<div class="panel-body" ng-controller="TodoController">
+			<p>{{Todo.remaining()}} of {{Todo.todos.length}} remaining&nbsp;[<a href="" ng-click="archive()">archive</a>]</p>
+			<ul class="list">
+				<li ng-repeat="todo in Todo.todos">
+					<input type="checkbox" ng-model="todo.done">
+					{{todo.title}}
+				</li>
+			</ul>
+			<input class="input" type="text" ng-model="newTodo" ng-keyup="check(e)" placeholder="add new todo here">
+			<button ng-click="addNew()">add</button>
+		</div>
+	</body>
+
+	<script>
+		function TodoController ($scope) {
+			$scope.Todo = {
+				todos: [
+					{title: 'hello', done: false},
+					{title: 'world', done: true}
+				],
+
+				remaining: function () {
+					var num = 0
+
+					angular.forEach($scope.Todo.todos, function (todo) {
+						if (todo.done) num++
+					})
+
+					return num
+				}
+			}
+
+			$scope.archive = function () {
+				angular.forEach($scope.Todo.todos, function (todo, i) {
+					if (todo.done) $scope.Todo.todos.splice(i, 1)
+				})
+			}
+
+			$scope.check = function (e) {
+				console.log(e.keyCode)
+			}
+
+			$scope.addNew = function () {
+				$scope.Todo.todos.push({title: $scope.newTodo, done: false})
+				$scope.newTodo = ''
+			}
+		}
+	</script>
+</html>
